@@ -31,4 +31,51 @@ for(let i=0;i<evenDivs.length;i++){
 const navText=document.querySelector("nav h1");
 console.log(navText);
 navText.textContent = "Hello World !";
+const navbar = document.querySelector("nav");
+navbar.innerHTML=`<h1>Hello!</h1> <p>This should align right</p>`;
 
+console.log(navbar);
+//navbar.style.justifyContent="flex-start";
+//navbar.style.justifyContent="flex-end";
+//navbar.style.justifyContent="space-evenly";
+navbar.style.justifyContent="space-between";
+console.log(evenDivs[0]);
+console.log(evenDivs[0].parentElement);
+console.log(evenDivs[0].parentElement.children);
+//This is also referred to as the DOM tree
+console.log(evenDivs[0].parentElement.childNodes);
+console.log(evenDivs[0].parentElement.hasChildNodes());
+console.log(evenDivs[0].parentElement.lastElementChild);
+console.log(evenDivs[0].parentElement.firstChild);
+console.log(evenDivs[0].parentElement.firstElementChild);
+console.log(evenDivs[0].nextSibling);
+console.log(evenDivs[0].nextElementSibling);
+console.log(evenDivs[0].nextElementSibling.nextElementSibling);
+console.log(evenDivs[0].previousSibling);
+console.log(evenDivs[0].previousElementSibling);
+
+view1.style.display="none";
+view2.style.display="flex";
+view2.style.FlexDirecton="row";
+view2.style.flexWrap="wrap";
+view2.style.margin="10px";
+
+while(view2.lastChild){
+    view2.lastChild.remove(); //This can be useful in a dynamic website where you need to clear a section of the page
+}
+
+const CreateDivs = (parent,iter) => {
+    const newDiv= document.createElement("div");
+    newDiv.textContent = iter;
+    newDiv.style.backgroundColor="#000";
+    newDiv.style.width="100px";
+    newDiv.style.height="100px";
+    newDiv.style.margin="10px";
+    newDiv.style.display="flex";
+    newDiv.style.justifyContent="center";
+    newDiv.style.alignItems="center";
+    parent.append(newDiv);
+};
+for(let i=1;i<=12;i++){
+    CreateDivs(view2,i);
+}
