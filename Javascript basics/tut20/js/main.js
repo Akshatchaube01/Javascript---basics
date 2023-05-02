@@ -79,3 +79,4 @@ const CreateDivs = (parent,iter) => {
 for(let i=1;i<=12;i++){
     CreateDivs(view2,i);
 }
+//This file still needs correction, the flex doesn't seem to work for some reason. 
